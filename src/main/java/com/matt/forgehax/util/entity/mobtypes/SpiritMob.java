@@ -2,12 +2,13 @@ package com.matt.forgehax.util.entity.mobtypes;
 
 import com.matt.forgehax.util.common.PriorityEnum;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.monster.EntityEnderman;
+import net.minecraft.entity.monster.EntitySpirit;
+import lumien.randomthings.entitys.ModEntitys;
 
 /**
  * Created on 6/27/2017 by fr1kin
  */
-public class EndermanMob extends MobType {
+public class SpiritMob extends MobType {
   
   @Override
   protected PriorityEnum getPriority() {
@@ -16,12 +17,12 @@ public class EndermanMob extends MobType {
   
   @Override
   public boolean isMobType(Entity entity) {
-    return entity instanceof EntityEnderman;
+    return entity instanceof EntitySpirit;
   }
   
   @Override
   protected MobTypeEnum getMobTypeUnchecked(Entity entity) {
-    EntityEnderman enderman = (EntityEnderman) entity;
-    return enderman.isScreaming() ? MobTypeEnum.HOSTILE : MobTypeEnum.NEUTRAL;
+    EntitySpirit enderman = (EntitySpirit) entity;
+    return MobTypeEnum.NEUTRAL;
   }
 }
